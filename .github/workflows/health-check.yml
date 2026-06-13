@@ -1,0 +1,27 @@
+name: health-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 9 * * 1"
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run health check if this repo is a generated vault
+        run: |
+          if [ -f scripts/vault_health_check.py ] && [ -f AGENTS.md ]; then
+            python scripts/vault_health_check.py
+          else
+            echo "Template repository: no generated vault files to check."
+          fi
+
