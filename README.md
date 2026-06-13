@@ -37,43 +37,12 @@ control, use one of these models:
 This repo starts with the first model: public educational core, commercial use
 controlled by license and service delivery.
 
-## Quick Install
+## Authorized Installation
 
-Clone this repository, then generate a company vault:
-
-```bash
-git clone https://github.com/cmoliterno/zethera-agentos-vault.git
-cd zethera-agentos-vault
-python scripts/bootstrap_vault.py --company "Acme Ltda" --target ../acme-agentos-vault
-```
-
-Then enter the generated vault:
-
-```bash
-cd ../acme-agentos-vault
-python scripts/vault_health_check.py --fix
-python scripts/vault_rag.py ingest --root . --db .agentos/rag.sqlite
-python scripts/vault_rag.py query --db .agentos/rag.sqlite --query "onde paramos no projeto principal"
-```
-
-Optional first commit:
-
-```bash
-git init
-git add .
-git commit -m "bootstrap: agentos vault"
-```
-
-## Class Prompt
-
-Use this in a live class after replacing the company name and target path:
-
-```text
-Clone https://github.com/cmoliterno/zethera-agentos-vault, run the bootstrap for
-the company "ACME", then verify the vault with the health check and create the
-first local git commit. Do not add secrets. If GitHub authentication is missing,
-stop after the local commit and tell me the exact next command.
-```
+Installation is delivered inside Zethera mentorships and implementation
+engagements. The public repository documents the operating model; cohort prompts,
+guided setup steps, and company-specific rollout material are distributed only to
+authorized participants.
 
 ## Operating Model
 
@@ -158,4 +127,3 @@ A company installation is usable when:
 - every active project has `_hot.md`, `CONTEXT.md`, and `_status.md`
 - local RAG can ingest and return at least one evidence pack
 - `python scripts/vault_sync.py --dry-run` shows the expected Git workflow
-

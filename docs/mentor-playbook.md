@@ -13,23 +13,8 @@ By the end of the class, the student should have:
 
 ## Live Prompt
 
-```text
-You are helping me install Zethera AgentOS Vault for my company.
-
-Clone the public repository:
-https://github.com/cmoliterno/zethera-agentos-vault
-
-Then run the bootstrap script for company "<COMPANY_NAME>" into
-"<TARGET_PATH>".
-
-After installation:
-1. run the health check with --fix
-2. ingest the local RAG index
-3. run a test query
-4. create the first git commit
-5. do not add secrets
-6. if GitHub auth is missing, stop before push and tell me the exact next step
-```
+The live installation prompt is part of the private mentorship material and is
+not published in this repository.
 
 ## Teaching Script
 
@@ -59,4 +44,3 @@ is the versioned operating vault.
 
 Because repeated context is expensive and noisy. The vault keeps a short hot
 state and stores full history separately.
-
